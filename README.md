@@ -1,7 +1,4 @@
-# unit-3-assignment-1
-
-## API and Documentation
-Documentation for the shape classes can be found [here](https://coderunner.projectstem.org/docs/shapes/index.html).
+# unit-3-assignment-2
 
 ## Git Config
 ```
@@ -25,46 +22,169 @@ After you compile the shape classes, you only need to compile and run `Main.java
 
 # Instructions  
 
-For any of these questions, you are NOT writing if-statements.  You should only be making boolean variables, and creating boolean expressions using the relational and logical operators.  Find the documentation for the Circle, Rectangle, and RegularPolygon class at this link.
+Do each of the following in a single program.
 
-[Shapes API](https://coderunner.projectstem.org/docs/shapes/index.html?_ga=2.85318812.489019979.1697552509-1811407564.1697552446)
+## Problem 1
+Write a program to test if a double input from the keyboard is equal to the double 12.345. If the input is equal to 12.345, print "YES" (without the quotes).
 
-## Problem
-Create two `Rectangle` objects (you can either hardcode or get user input).  Create boolean variables that meet the following criteria
+Sample run 1:
+```
+Please enter a double:
+54.321
+```
+Sample run 2:
+```
+Please enter a double:
+12.345
+YES
+```
 
- - `isRotated`: Evaluates to `true` if the rectangles are 90 degrees rotated from each other, and is `false` otherwise.  This means the length of one is equal to the width of the other, and vice versa.
- - `isCongruent`: Evaluates to `true` if the rectangles are equal to each other, or are rotated 90 degrees to each other.  Use both the `equals()` method from the `Rectangle` class as well as `isRotated` that you created earlier.
- - `isSimilar`: Evaluates to `true` if either the rectangles are congruent, or if the ratio of the lengths of the rectangles are equal to the ratio of the widths.
+## Problem 2
+Write a program to test if an integer input from the keyboard is equal to 48. If it is, print "YES" (without the quotes).
 
-Print out all your booleans.
+Sample run 1:
+```
+Please enter an integer:
+46
+```
+Sample run 2:
+```
+Please enter an integer:
+48
+YES
+```
 
-## CodingBat
-Do the following on [CodingBat - Logic 1](https://codingbat.com/java/Logic-1)
+## Problem 3
+Write a program that takes two integers from the keyboard and tests if the second integer is twice the first integer. If the second integer is twice the first integer, print "YES" (without the quotes).
 
-No if-statements are needed (don't worry if this causes your solution to be slightly inefficient).
- - cigarParty
- - squirrelPlay
- - love6
- - in1To10
+Sample run 1:
+```
+Please enter two integers:
+44
+65
+```
+Sample run 2:
+```
+Please enter two integers:
+20
+40
+YES
+```
 
-## Sample Solutions
-```java
-public class Main
-{
-	public static void main(String[] args)
-	{
-		Rectangle r1 = new Rectangle(2, 4);
-		Rectangle r2 = new Rectangle(4, 2);
+## Problem 4
+Write a program to test if an integer input from the keyboard is divisible by two, or divisible by 3, or both!
 
-		// Rotated if the length of 1 is equal to the width of 2 and vice versa
-		boolean isRotated = (r1.getLength() == r2.getWidth()) && (r1.getWidth() == r2.getLength());
+Sample Run 1:
+```
+Please enter an integer:
+7
+```
+Sample Run 2:
+```
+Please enter an integer:
+4
+Divisible by 2!
+```
+Sample Run 3: 
+```
+Please enter an integer:
+9
+Divisible by 3!
+```
+Sample Run 4: 
+```
+Please enter an integer:
+18
+Divisible by 2!
+Divisible by 3!
+```
+(Hint: You will probably need to use the % operator for this one.)
 
-		// Congruent if they are either rotated, or exactly equal to each other; equals() from the Rectangle class will check
-		// equality of rectangles for me
-		boolean isCongruent = isRotated || r1.equals(r2);
+## Problem 5
+Write a program that takes the input of an integer number from the keyboard and prints "Even" if the integer is even , and prints “Odd" otherwise. You must use an else statement to gain full credit for this exercise.
 
-		// Similar if they are either congruent, or if the ratio of the lengths is equal to the ratio of the widths
-		boolean isSimilar = isCongruent || ( (r1.getLength() / r2.getLength()) == (r1.getWidth() / r2.getWidth()) ) ;
-	}
-}
+Sample run 1
+```
+Please enter an integer
+7
+Odd
+```
+Sample run 2
+```
+Please enter an integer
+-2
+Even
+```
+
+## Problem 6
+Write a program that takes input as a String letter grade from the keyboard and translates it to a grade range. For example, if a user enters “A”, the program should output “90-100”.
+
+- “A” = “90-100”
+- “B” = “80-90”
+- “C” = “70-80”
+- “D” = “60-70”
+- “F” = “0-60”
+
+The program should only accept the five strings outlined above. If the user enters any other strings, the program should print “Invalid letter grade”.
+
+Sample run 1: 
+```
+Please enter a letter grade:
+A
+90-100
+```
+Sample run 2: 
+```
+Please enter a letter grade:
+a
+Invalid letter grade
+```
+Sample run 3:
+```
+Please enter a letter grade:
+abc
+Invalid letter grade
+To gain full credit for this exercise you will need to use else if statements when checking the grade.
+```
+
+Hint: For comparing the strings, you should be using the `.equals()` method from the String class.
+
+## Problem 7
+Create a program to check if a user can do simple addition. The program will generate two random integers.
+- The first should be between 0 and 50 (inclusive)
+- The second should be between 51 and 100 (inclusive)
+
+Then, user should input an integer as their answer to the sum of the two numbers. If they enter the correct sum print “Correct!” otherwise print “Wrong”. You must use an else statement in your code to receive full credit for this exercise.
+
+Sample run 1:
+```
+4 + 47 = ?
+> 12
+Wrong
+```
+Sample run 2:
+```
+8 + 82 = ?
+> 90
+Correct!
+```
+
+## Problem 8
+We are going to revisit a former coding activity on temperature, with a slight adjustment. 
+
+You are running an experiment that involves tracking human body temperature. The "normal" body temperature can have a wide range from 97 to 99 degrees Fahrenheit.
+
+Write the code for the sensor that will be tracking the temperature. If the temperature falls between 97 and 99 (inclusive) your code should print “Temperature is OK”. Otherwise, your code should print “NOT NORMAL”.
+
+Sample Run 1:
+```
+What is the temperature?
+101
+NOT NORMAL
+```
+Sample Run 2:
+```
+What is the temperature?
+98
+Temperature is OK
 ```
