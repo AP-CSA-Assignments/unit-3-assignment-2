@@ -4,6 +4,13 @@ public class Main
 {
   public static void main(String[] args)
   {
-    // write solutions to problems here
+    Scanner scan = new Scanner(System.in);  // input from the keyboard
+    /* ============= BEGIN SOLUTION ================================ */
+
+
+
+
+    /* ============= END SOLUTION ================================== */
+    scan.close();
   }
 }
